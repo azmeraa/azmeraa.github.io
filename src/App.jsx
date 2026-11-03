@@ -3,7 +3,7 @@ import {
   ArrowDown, ArrowUpRight, Github, Linkedin, Mail, MapPin, Menu, X,
   Database, BrainCircuit, ChartNoAxesCombined, Server, ShieldCheck,
   Workflow, Code2, ExternalLink, BriefcaseBusiness, GraduationCap,
-  FileText, Download, Check,
+  FileText, Download, Check, Phone,
 } from 'lucide-react'
 
 /* ------------------------------------------------------------------ */
@@ -15,9 +15,15 @@ const PROFILE = {
   email: 'azmeraabebe26@gmail.com',
   github: 'https://github.com/azmeraa',
   linkedin: '', // TODO: paste your LinkedIn URL, e.g. https://www.linkedin.com/in/your-name
-  cv: '/Azmera_CV.pdf',
+  // The file must be at  public/Azmera_CV.pdf  (exact name, capital A, in the "public" folder)
+  cv: `${import.meta.env.BASE_URL}Azmera_CV.pdf`,
   photo: '/profile.jpg', // optional: put a professional headshot in /public. Falls back to initials.
   location: 'Addis Ababa, Ethiopia',
+  phone: '+251918664908',
+  phoneDisplay: '+251 918 664 908',
+  facebook: 'https://web.facebook.com/Azmerabebe',
+  instagram: 'https://www.instagram.com/azmerabebe',
+  tiktok: 'https://www.tiktok.com/@azmerabebe',
 }
 
 const openTo = ['Full-time roles', 'Internships', 'Scholarships & fellowships', 'Research & collaboration']
@@ -71,10 +77,10 @@ const projects = [
     number: '05',
     name: 'Banking Data Analysis (SQL)',
     category: 'SQL & analytics',
-    description: 'SQL project exploring banking data, demonstrating relational querying and analytical thinking.',
+    description: 'A SQL-based data analysis project focused on exploring banking-related data and extracting useful business insights. It demonstrates practical SQL skills, including querying, filtering, aggregating and analyzing structured data to identify patterns and support data-driven decision-making.',
     stack: ['SQL'],
     result: 'SQL-based banking data analysis',
-    note: 'TODO: add 1–2 sentences on the questions you answered.',
+    note: 'Portfolio analysis project. See the repository for the queries.',
     link: 'https://github.com/azmeraa/banking-data-analysis-sql',
     icon: Database,
   },
@@ -82,10 +88,10 @@ const projects = [
     number: '06',
     name: 'Interactive Dev Cards',
     category: 'Frontend development',
-    description: 'Small web-development project built with front-end tools.',
+    description: 'An interactive web development project that presents developer information through digital profile cards. It demonstrates front-end development skills and the ability to create structured, interactive user interfaces for displaying developer profiles and related information.',
     stack: ['Web development'],
     result: 'Interactive development cards',
-    note: 'TODO: add what it does and the tech used.',
+    note: 'Front-end portfolio project.',
     link: 'https://github.com/azmeraa/interactive-dev-cards',
     icon: Code2,
   },
@@ -101,7 +107,11 @@ const skills = [
 const experience = [
   {
     role: 'Database Administration Officer I', org: 'Hibret Bank', period: 'Apr 2025 – Present',
-    points: ['Enterprise database administration in a banking environment.', 'TODO: add one measurable result (e.g. uptime %, databases managed, recovery time).'],
+    points: [
+      'Managed and supported databases in a banking production environment, maintaining availability, performance, security and data integrity while supporting critical business operations.',
+      'Contributed to high availability through database monitoring, maintenance, backup and recovery, and incident resolution.',
+      // TODO (optional but powerful): add real numbers, e.g. "Managed 25+ production databases" or "99.9% availability".
+    ],
   },
   {
     role: 'Associate Database Administration Officer', org: 'Hibret Bank', period: 'Aug 2022 – Apr 2025',
@@ -461,13 +471,33 @@ function App() {
           </div>
         </section>
 
+        {/* OPPORTUNITIES */}
+        <section id="opportunities" className="section-wrap">
+          <div className="container-shell grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+            <SectionHeading
+              eyebrow="06 / OPPORTUNITIES"
+              title="What I'm looking for."
+            />
+            <div>
+              <p className="text-base leading-8 text-slate-300">
+                I am actively seeking scholarship opportunities, professional development programmes, and international collaborations that will strengthen my expertise in artificial intelligence, data science, and digital transformation. With over 10 years of experience in enterprise IT and database administration, I am motivated to build on my technical foundation, develop innovative solutions, and contribute to technology-driven development in Ethiopia and across Africa. I welcome opportunities to learn, collaborate, and apply my skills to meaningful real-world challenges.
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-2" aria-label="Areas of interest">
+                {['Artificial intelligence', 'Data science', 'Digital transformation', 'Scholarships', 'Professional development', 'International collaboration'].map((t) => (
+                  <li key={t} className="chip">{t}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* CONTACT */}
-        <section id="contact" className="section-wrap">
+        <section id="contact" className="section-wrap border-t border-white/[0.05] bg-white/[0.015]">
           <div className="container-shell">
             <div className="relative overflow-hidden rounded-[2rem] border border-mint/20 bg-gradient-to-br from-[#142438] via-panel to-[#101827] px-7 py-14 text-center sm:px-14 sm:py-20">
               <div className="absolute -right-20 -top-28 h-72 w-72 rounded-full bg-mint/10 blur-3xl" aria-hidden="true" />
               <div className="relative mx-auto max-w-3xl">
-                <p className="eyebrow">06 / GET IN TOUCH</p>
+                <p className="eyebrow">07 / GET IN TOUCH</p>
                 <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
                   Let's build something <span className="gradient-text">meaningful.</span>
                 </h2>
@@ -476,7 +506,12 @@ function App() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
-                  <a href={`mailto:${PROFILE.email}?subject=Opportunity for Azmera`} className="btn-primary">
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE.email}&su=${encodeURIComponent('Opportunity for Azmera')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
                     <Mail size={17} className="mr-2" /> Email me
                   </a>
                   <a href={PROFILE.cv} download="Azmera_Abebe_Teshale_CV.pdf" className="btn-outline">
@@ -484,17 +519,51 @@ function App() {
                   </a>
                 </div>
 
-                <p className="mt-5 text-sm text-slate-400">{PROFILE.email}</p>
+                <p className="mt-5 text-sm text-slate-400">
+                  Or write to{' '}
+                  <a href={`mailto:${PROFILE.email}`} className="text-mint underline-offset-4 hover:underline">{PROFILE.email}</a>
+                </p>
 
-                <div className="mt-10 flex items-center justify-center gap-4">
-                  <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub" className="social-icon">
-                    <Github size={22} />
+                <div className="mt-4">
+                  <a href={`tel:${PROFILE.phone}`} className="inline-flex items-center gap-2 text-slate-300 transition hover:text-mint">
+                    <Phone size={17} className="text-mint" aria-hidden="true" />
+                    {PROFILE.phoneDisplay}
                   </a>
-                  {PROFILE.linkedin && (
-                    <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" className="social-icon">
-                      <Linkedin size={22} />
+                </div>
+
+                <div className="mt-10">
+                  <p className="mb-5 text-xs font-semibold uppercase tracking-[.2em] text-slate-400">Connect with me</p>
+                  <div className="flex items-center justify-center gap-4">
+                    <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub" className="social-icon github-icon">
+                      <Github size={22} />
                     </a>
-                  )}
+
+                    {PROFILE.linkedin && (
+                      <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" className="social-icon linkedin-icon">
+                        <Linkedin size={22} />
+                      </a>
+                    )}
+
+                    <a href={PROFILE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" className="social-icon facebook-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.973h-1.513c-1.49 0-1.956.93-1.956 1.884v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" />
+                      </svg>
+                    </a>
+
+                    <a href={PROFILE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" className="social-icon instagram-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                      </svg>
+                    </a>
+
+                    <a href={PROFILE.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok" className="social-icon tiktok-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                        <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.97-1.166-1.958-1.282-2.65h.004C16.366 1.114 16.42.75 16.428.75h-3.8v14.695c0 .197 0 .392-.008.585 0 .024-.002.047-.003.071 0 .01 0 .02-.002.03v.008a3.226 3.226 0 0 1-1.617 2.57 3.164 3.164 0 0 1-1.558.41c-1.78 0-3.224-1.45-3.224-3.24 0-1.79 1.444-3.24 3.224-3.24.337 0 .672.053.992.158l.005-3.872a7.07 7.07 0 0 0-.998-.072c-3.86 0-6.993 3.15-6.993 7.034 0 2.382 1.19 4.482 3.006 5.75a6.94 6.94 0 0 0 3.987 1.255 7.01 7.01 0 0 0 3.007-.68 6.99 6.99 0 0 0 3.87-6.264V8.11a9.91 9.91 0 0 0 5.78 1.853V6.12s-1.47.07-2.775-.558Z" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
