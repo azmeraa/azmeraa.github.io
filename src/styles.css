@@ -109,6 +109,23 @@
     @apply inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition duration-200 hover:-translate-y-1 hover:border-mint hover:text-mint;
   }
 
+  .social-icon.github-icon:hover { color: #ffffff; border-color: #ffffff; }
+  .social-icon.linkedin-icon:hover { color: #0a66c2; border-color: #0a66c2; box-shadow: 0 0 18px rgba(10, 102, 194, 0.3); }
+  .social-icon.facebook-icon:hover { color: #1877f2; border-color: #1877f2; box-shadow: 0 0 18px rgba(24, 119, 242, 0.25); }
+  .social-icon.instagram-icon:hover { color: #e4405f; border-color: #e4405f; box-shadow: 0 0 18px rgba(228, 64, 95, 0.25); }
+  .social-icon.tiktok-icon:hover { color: #25f4ee; border-color: #25f4ee; box-shadow: 0 0 18px rgba(37, 244, 238, 0.25); }
+
+  /* Hero portrait: rounded rectangle with mint-to-blue glowing border */
+  .portrait-frame {
+    @apply relative rounded-[1.75rem] bg-gradient-to-br from-mint to-sky p-[3px];
+    box-shadow:
+      0 0 28px rgba(117, 224, 192, 0.35),
+      0 0 60px rgba(124, 196, 255, 0.18);
+  }
+  .portrait-glow {
+    @apply pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-mint/20 to-sky/20 blur-3xl;
+  }
+
   /* Accessibility */
   .skip-link {
     @apply absolute left-4 top-[-60px] z-[100] rounded-lg bg-mint px-4 py-2 text-sm font-bold text-ink transition-all focus:top-4;
