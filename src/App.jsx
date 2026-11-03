@@ -17,7 +17,7 @@ const PROFILE = {
   linkedin: '', // TODO: paste your LinkedIn URL, e.g. https://www.linkedin.com/in/your-name
   // The file must be at  public/Azmera_CV.pdf  (exact name, capital A, in the "public" folder)
   cv: `${import.meta.env.BASE_URL}Azmera_CV.pdf`,
-  photo: '/profile.pg.png', // optional: put a professional headshot in /public. Falls back to initials.
+  photo: '/profile.png', // optional: put a professional headshot in /public. Falls back to initials.
   location: 'Addis Ababa, Ethiopia',
   phone: '+251918664908',
   phoneDisplay: '+251 918 664 908',
