@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', sans-serif; color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; background: #090d18; }
+::selection { background: rgba(117,224,192,.28); color: #fff; }
+.container-shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+.section-wrap { padding-block: 112px; }
+.section-title { margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; line-height: 1.12; letter-spacing: -.045em; }
+.eyebrow { color: #75e0c0; font-size: .7rem; font-weight: 700; letter-spacing: .2em; }
+.nav-link { color: #94a3b8; font-size: .85rem; transition: color .2s; }
+.nav-link:hover { color: #75e0c0; }
+.gradient-text { background: linear-gradient(100deg, #75e0c0 5%, #82b7ff 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.site-grid { position: absolute; inset: 0 0 auto; height: 850px; pointer-events: none; opacity: .18; background-image: linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent); }
+.timeline-item { position: relative; padding-left: 32px; border-left: 1px solid #263247; }
+.timeline-item:last-child { border-left-color: transparent; }
+.timeline-dot { position: absolute; left: -6px; top: 5px; width: 11px; height: 11px; border: 2px solid #75e0c0; border-radius: 50%; background: #090d18; box-shadow: 0 0 18px rgba(117,224,192,.3); }
+.project-card { border: 1px solid #263247; border-radius: 1.5rem; background: linear-gradient(145deg, rgba(17,24,39,.92), rgba(11,18,32,.92)); padding: 1.75rem; transition: transform .25s, border-color .25s, box-shadow .25s; }
+.project-card:hover { transform: translateY(-5px); border-color: rgba(117,224,192,.4); box-shadow: 0 22px 70px rgba(0,0,0,.2); }
+@media (max-width: 640px) { .container-shell { width: min(100% - 32px, 1160px); } .section-wrap { padding-block: 76px; } }
