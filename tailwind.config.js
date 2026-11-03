@@ -1,21 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
-      },
       colors: {
-        ink: '#090d18',
-        panel: '#111827',
-        line: '#263247',
+        ink: '#0a0f1a',
+        panel: '#111a2b',
+        line: '#1f2b40',
         mint: '#75e0c0',
-        sky: '#82b7ff',
+        sky: '#7cc4ff',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 70px rgba(117, 224, 192, 0.12)',
+        glow: '0 0 32px rgba(117, 224, 192, 0.25)',
       },
     },
   },
