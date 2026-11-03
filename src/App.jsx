@@ -469,53 +469,73 @@ function App() {
                   </a>
                 </div>
 
-                {/* SOCIAL MEDIA */}
-                <div className="mt-9">
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-[.18em] text-slate-500">
-                    Connect with me
-                  </p>
+               
+{/* SOCIAL MEDIA */}
+<div className="mt-10">
+  <p className="mb-5 text-xs font-semibold uppercase tracking-[.2em] text-slate-500">
+    Connect with me
+  </p>
 
-                  <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
-                    <a
-                      href="https://github.com/azmeraa"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-mint"
-                    >
-                      <Github size={18} /> GitHub
-                    </a>
+  <div className="flex items-center justify-center gap-5">
 
-                    <a
-                      href="https://web.facebook.com/Azmerabebe"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-mint"
-                    >
-                      <Facebook size={18} /> Facebook
-                    </a>
+    {/* GitHub */}
+    <a
+      href="https://github.com/azmeraa"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+      title="GitHub"
+      className="social-icon github-icon"
+    >
+      <Github size={23} />
+    </a>
 
-                    <a
-                      href="https://www.instagram.com/azmerabebe"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-mint"
-                    >
-                      <Instagram size={18} /> Instagram
-                    </a>
+    {/* Facebook */}
+    <a
+      href="https://web.facebook.com/Azmerabebe"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      title="Facebook"
+      className="social-icon facebook-icon"
+    >
+      <svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.973h-1.513c-1.49 0-1.956.93-1.956 1.884v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/>
+      </svg>
+    </a>
 
-                    <a
-                      href="https://www.tiktok.com/@azmerabebe"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-mint"
-                    >
-                      <Music2 size={18} /> TikTok
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/azmerabebe"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      title="Instagram"
+      className="social-icon instagram-icon"
+    >
+      <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    {/* TikTok */}
+    <a
+      href="https://www.tiktok.com/@azmerabebe"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="TikTok"
+      title="TikTok"
+      className="social-icon tiktok-icon"
+    >
+      <svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor">
+        <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.97-1.166-1.958-1.282-2.65h.004C16.366 1.114 16.42.75 16.428.75h-3.8v14.695c0 .197 0 .392-.008.585 0 .024-.002.047-.003.071 0 .01 0 .02-.002.03v.008a3.226 3.226 0 0 1-1.617 2.57 3.164 3.164 0 0 1-1.558.41c-1.78 0-3.224-1.45-3.224-3.24 0-1.79 1.444-3.24 3.224-3.24.337 0 .672.053.992.158l.005-3.872a7.07 7.07 0 0 0-.998-.072c-3.86 0-6.993 3.15-6.993 7.034 0 2.382 1.19 4.482 3.006 5.75a6.94 6.94 0 0 0 3.987 1.255 7.01 7.01 0 0 0 3.007-.68 6.99 6.99 0 0 0 3.87-6.264V8.11a9.91 9.91 0 0 0 5.78 1.853V6.12s-1.47.07-2.775-.558Z"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
         </section>
       </main>
 
@@ -529,6 +549,48 @@ function App() {
       </footer>
     </div>
   )
+}
+
+/* Professional social media icon buttons */
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.1);
+}
+
+.facebook-icon:hover {
+  color: #1877F2;
+  border-color: #1877F2;
+  box-shadow: 0 0 18px rgba(24,119,242,0.25);
+}
+
+.instagram-icon:hover {
+  color: #E4405F;
+  border-color: #E4405F;
+  box-shadow: 0 0 18px rgba(228,64,95,0.25);
+}
+
+.tiktok-icon:hover {
+  color: #25F4EE;
+  border-color: #25F4EE;
+  box-shadow: 0 0 18px rgba(37,244,238,0.25);
+}
+
+.github-icon:hover {
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 export default App
