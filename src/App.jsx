@@ -4,6 +4,7 @@ import {
   Database, BrainCircuit, ChartNoAxesCombined, Server, ShieldCheck,
   Workflow, Code2, ExternalLink, BriefcaseBusiness, GraduationCap,
   FileText, Sparkles
+
 } from 'lucide-react'
 
 const projects = [
@@ -223,6 +224,14 @@ function App() {
 >
   <Mail size={17} className="mr-2" />
   azmeraabebe26@gmail.com
+<a
+  href="/Azmera_CV.pdf"
+  download="Azmera_Abebe_Teshale_CV.pdf"
+  className="mt-4 inline-flex items-center rounded-full border border-mint px-7 py-4 text-sm font-bold text-mint transition hover:-translate-y-1"
+>
+  Download My CV
+</a>
+
 </a>
                 <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-400"><a className="inline-flex items-center gap-2 transition hover:text-mint" href="https://github.com/azmeraa" target="_blank" rel="noreferrer"><Github size={17} /> GitHub <ArrowUpRight size={13} /></a><a className="inline-flex items-center gap-2 transition hover:text-mint" href="https://azmeraa.github.io/portfolio/" target="_blank" rel="noreferrer"><ExternalLink size={16} /> Existing portfolio <ArrowUpRight size={13} /></a></div>
               </div>
