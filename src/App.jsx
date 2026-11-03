@@ -214,7 +214,16 @@ function App() {
             <div className="relative overflow-hidden rounded-[2rem] border border-mint/20 bg-gradient-to-br from-[#142438] via-panel to-[#101827] px-7 py-14 text-center sm:px-14 sm:py-20">
               <div className="absolute -right-20 -top-28 h-72 w-72 rounded-full bg-mint/10 blur-3xl" />
               <div className="relative mx-auto max-w-2xl"><p className="eyebrow">06 / GET IN TOUCH</p><h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Let’s build something <span className="gradient-text">meaningful.</span></h2><p className="mt-5 leading-7 text-slate-400">I’m open to conversations about database administration, data engineering, analytics, applied AI projects and opportunities to collaborate.</p>
-                <a href="mailto:azmeraabebe26@gmail.com" className="mt-8 inline-flex items-center rounded-full bg-mint px-7 py-4 text-sm font-bold text-ink transition hover:-translate-y-1 hover:shadow-glow"><Mail size={17} className="mr-2" /> azmeraabebe26@gmail.com</a>
+               
+<a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=azmeraabebe26@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 inline-flex items-center rounded-full bg-mint px-7 py-4 text-sm font-bold text-ink transition hover:-translate-y-1 hover:shadow-glow"
+>
+  <Mail size={17} className="mr-2" />
+  azmeraabebe26@gmail.com
+</a>
                 <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-400"><a className="inline-flex items-center gap-2 transition hover:text-mint" href="https://github.com/azmeraa" target="_blank" rel="noreferrer"><Github size={17} /> GitHub <ArrowUpRight size={13} /></a><a className="inline-flex items-center gap-2 transition hover:text-mint" href="https://azmeraa.github.io/portfolio/" target="_blank" rel="noreferrer"><ExternalLink size={16} /> Existing portfolio <ArrowUpRight size={13} /></a></div>
               </div>
             </div>
