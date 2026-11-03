@@ -119,11 +119,11 @@ const experience = [
     points: ['Supported database operations, reliability, security and performance.'],
   },
   {
-    role: 'Database Administrator', org: 'Ethiopian Ministry of Revenue', period: 'Mar 2020 – Jul 2022',
+    role: 'Customs Database Administrator', org: 'Ethiopian Ministry of Revenue', period: 'Mar 2020 – Jul 2022',
     points: ['Supported database operations and enterprise information systems in a government environment.'],
   },
   {
-    role: 'Database Administrator', org: 'Addis Ababa Housing Development Office', period: 'Dec 2015 – Mar 2020',
+    role: 'Database Officer', org: 'Addis Ababa Housing Development Office', period: 'Dec 2015 – Mar 2020',
     points: ['Built a foundation in database administration and IT systems support.'],
   },
 ]
