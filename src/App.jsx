@@ -158,23 +158,36 @@ function SectionHeading({ eyebrow, title, text }) {
   )
 }
 
-function Avatar() {
+function Portrait() {
   const [failed, setFailed] = useState(false)
-  if (failed || !PROFILE.photo) {
-    return (
-      <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-full border border-mint/30 bg-mint/[0.08] font-display text-5xl font-bold text-mint shadow-glow">
-        {PROFILE.initials}
-      </div>
-    )
-  }
+  const showPhoto = PROFILE.photo && !failed
+
   return (
-    <img
-      src={PROFILE.photo}
-      alt={`Portrait of ${PROFILE.name}`}
-      width="144" height="144"
-      onError={() => setFailed(true)}
-      className="mx-auto h-36 w-36 rounded-full border border-mint/30 object-cover shadow-glow"
-    />
+    <figure className="relative mx-auto w-full max-w-[360px]">
+      {/* soft glow behind the frame */}
+      <div className="portrait-glow" aria-hidden="true" />
+
+      {/* mint-to-blue gradient border */}
+      <div className="portrait-frame">
+        {showPhoto ? (
+          <img
+            src={PROFILE.photo}
+            alt={`Portrait of ${PROFILE.name}`}
+            width="640" height="800"
+            onError={() => setFailed(true)}
+            className="aspect-[4/5] w-full rounded-[1.4rem] object-cover object-top"
+          />
+        ) : (
+          <div className="flex aspect-[4/5] w-full items-center justify-center rounded-[1.4rem] bg-panel font-display text-7xl font-bold text-mint">
+            {PROFILE.initials}
+          </div>
+        )}
+      </div>
+
+      <figcaption className="mt-5 text-center text-xs font-semibold uppercase tracking-[.28em] text-slate-300">
+        IT <span className="text-mint">·</span> Database <span className="text-mint">·</span> AI
+      </figcaption>
+    </figure>
   )
 }
 
@@ -293,25 +306,7 @@ function App() {
               </p>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[380px]">
-              <div className="absolute -inset-8 rounded-full bg-mint/[0.07] blur-3xl" aria-hidden="true" />
-              <div className="relative rounded-[2rem] border border-white/10 bg-gradient-to-br from-panel to-[#0b1220] p-7 shadow-2xl">
-                <Avatar />
-                <div className="mt-6 text-center">
-                  <p className="font-display text-xl font-bold">{PROFILE.name}</p>
-                  <p className="mt-1 text-sm text-slate-400">Database · Data · AI</p>
-                </div>
-                <dl className="mt-7 grid grid-cols-3 gap-3 text-center">
-                  {[['10+', 'Years in IT'], ['6', 'Projects'], ['BSc', 'Info. Tech']].map(([v, l]) => (
-                    <div key={l} className="rounded-2xl border border-line bg-ink/60 p-3">
-                      <dt className="sr-only">{l}</dt>
-                      <dd className="font-display text-xl font-bold text-mint">{v}</dd>
-                      <p className="mt-1 text-[11px] text-slate-400" aria-hidden="true">{l}</p>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
+            <Portrait />
           </div>
 
           <a href="#about" className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs tracking-widest text-slate-500 md:flex">
